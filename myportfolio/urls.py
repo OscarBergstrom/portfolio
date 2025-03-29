@@ -1,4 +1,8 @@
-from django.shortcuts import render
+from django.contrib import admin
+from django.urls import path
+from . import views  # Import the views file
 
-def works_view(request):
-    return render(request, 'portfolio/home.html')
+urlpatterns = [
+    path('', views.home, name='home'),  # Map the home view to the root URL
+    path('admin/', admin.site.urls),
+]
